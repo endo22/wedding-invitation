@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from "next/image";
 
 interface PaymentOption {
   id: string;
@@ -160,11 +161,13 @@ const WeddingGift: React.FC = () => {
                     </div>
                   </div>
                   <div className="w-12 h-8 flex items-center justify-center bg-white/20 rounded-md absolute top-4 right-4">
-                    <img
+                    <Image
                       src={option.logo}
                       alt={option.name + ' logo'}
+                      width={48}
+                      height={32}
                       className="h-full w-auto object-contain"
-                      onError={e => { e.currentTarget.style.display = 'none'; }}
+                      onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                     />
                   </div>
                 </div>

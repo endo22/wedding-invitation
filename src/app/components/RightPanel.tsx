@@ -68,7 +68,7 @@ export default function RightPanel() {
             
             {/* Thank you message */}
             <p className="text-xs text-gray-400 italic mb-4 max-w-xs mx-auto leading-relaxed">
-              "Terima kasih telah menjadi bagian dari hari bahagia kami. Doa dan restu dari Anda sangat berarti bagi kami."
+              &quot;Terima kasih telah menjadi bagian dari hari bahagia kami. Doa dan restu dari Anda sangat berarti bagi kami.&quot;
             </p>
             
             {/* Decorative hearts */}
