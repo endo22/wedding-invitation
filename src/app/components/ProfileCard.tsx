@@ -34,7 +34,7 @@ export default function ProfileCard() {  return (
         <p className="text-sm text-gray-700 mb-4">Bapak Wilson Martianus Silalahi & Ibu Henny Herawaty Br Siregar</p>
         <div className="bg-gradient-to-br from-gray-50 to-gray-150 rounded-lg p-3 border shadow-inner mx-2">
           <p className="text-xs text-gray-600 font-medium italic">
-            "Kasih sejati adalah ketika dua hati bersatu dalam iman dan cinta kasih Tuhan"
+            &quot;Kasih sejati adalah ketika dua hati bersatu dalam iman dan cinta kasih Tuhan&quot;
           </p>
         </div>
         <div className="mt-4 flex justify-center">

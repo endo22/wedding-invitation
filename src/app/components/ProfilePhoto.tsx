@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface ProfilePhotoProps {
   name: string;
@@ -112,9 +113,11 @@ export default function ProfilePhoto({ name, folderPath }: ProfilePhotoProps) {
           background: '#fff',
           position: 'relative',
           zIndex: 1        }}>
-          <img
+          <Image
             src={`${folderPath}/${slideshowImages[currentImageIndex]}`}
             alt={`${name} Profile ${currentImageIndex + 1}`}
+            width={120}
+            height={120}
             style={{
               width: '100%',
               height: '100%',

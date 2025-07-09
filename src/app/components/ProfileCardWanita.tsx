@@ -36,7 +36,7 @@ export default function ProfileCardWanita() {
         <p className="text-sm text-gray-700 mb-4">Bapak Kim Jung-ho & Ibu Park Mi-young</p>
         <div className="bg-gradient-to-br from-gray-50 to-gray-150 rounded-lg p-3 border shadow-inner mx-2">
           <p className="text-xs text-gray-600 font-medium italic">
-            "Cinta sejati adalah kebahagiaan yang dibagi berdua dalam setiap langkah kehidupan"
+            &quot;Cinta sejati adalah kebahagiaan yang dibagi berdua dalam setiap langkah kehidupan&quot;
           </p>
         </div>
         <div className="mt-4 flex justify-center">
