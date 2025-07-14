@@ -12,10 +12,10 @@ export default function Home() {
 
   const handleOpenInvitation = () => {
     setShowInvitation(true);
-    // Auto-start music when invitation opens
+    // Auto-start music when invitation opens - shorter delay for mobile
     setTimeout(() => {
       setIsMusicPlaying(true);
-    }, 1000); // Delay 1 detik untuk smooth transition
+    }, 500); // Reduced delay untuk mobile
   };
 
   const toggleMusic = () => {
@@ -47,13 +47,11 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Background Music Control - Only show when invitation is open */}
-      {showInvitation && (
-        <BackgroundMusic 
-          isPlaying={isMusicPlaying}
-          onToggle={toggleMusic}
-        />
-      )}
+      {/* Background Music Control - Show on all devices */}
+      <BackgroundMusic 
+        isPlaying={isMusicPlaying}
+        onToggle={toggleMusic}
+      />
     </div>
   );
 }
