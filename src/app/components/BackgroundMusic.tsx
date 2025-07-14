@@ -75,7 +75,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }
           // Resume AudioContext for iOS Safari
           if (typeof window !== 'undefined' && 'webkitAudioContext' in window) {
             try {
-              const AudioContext = window.AudioContext || (window as typeof window.AudioContext).webkitAudioContext;
+              const AudioContext = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
               if (AudioContext) {
                 const audioContext = new AudioContext();
                 if (audioContext.state === 'suspended') {
