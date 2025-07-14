@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // Simple in-memory storage for development
-let wishes: any[] = [];
+const wishes: Wish[] = [];
 
 interface Wish {
   id: string;

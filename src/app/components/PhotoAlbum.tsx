@@ -143,10 +143,11 @@ const PhotoAlbum: React.FC = () => {
       >
         {/* Background Image */}
         <div className="absolute inset-0 transition-transform duration-300 ease-out" style={{ zIndex: 0 }}>
-          <img
+          <Image
             src="/images/Section Album.jpg"
             alt="Background"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
             style={{
               filter: "brightness(0.6) blur(0.5px)",
               transform: `scale(${1 + scrollY * 0.0002})`,

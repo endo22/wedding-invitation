@@ -9,21 +9,17 @@ interface BackgroundMusicProps {
 
 const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }) => {
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
+    // Set initial volume
+    audio.volume = 0.6;
+
     const handleLoadedData = () => {
       setIsLoaded(true);
-      setDuration(audio.duration);
-    };
-
-    const handleTimeUpdate = () => {
-      setCurrentTime(audio.currentTime);
     };
 
     const handleEnded = () => {
@@ -33,12 +29,10 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }
     };
 
     audio.addEventListener('loadeddata', handleLoadedData);
-    audio.addEventListener('timeupdate', handleTimeUpdate);
     audio.addEventListener('ended', handleEnded);
 
     return () => {
       audio.removeEventListener('loadeddata', handleLoadedData);
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('ended', handleEnded);
     };
   }, []);
@@ -54,32 +48,12 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }
     }
   }, [isPlaying, isLoaded]);
 
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  };
-
-  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio || !duration) return;
-
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
-    const width = rect.width;
-    const newTime = (clickX / width) * duration;
-    
-    audio.currentTime = newTime;
-    setCurrentTime(newTime);
-  };
-
   return (
     <>
       {/* Audio Element */}
       <audio
         ref={audioRef}
         preload="auto"
-        volume={0.6}
       >
         <source src="/audio/Kina Grannis - Can t Help Falling In Love (From Crazy Rich Asians).mp3" type="audio/mpeg" />
         Your browser does not support the audio element.

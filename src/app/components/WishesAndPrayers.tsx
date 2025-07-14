@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface Wish {
   id: string;
@@ -38,7 +39,7 @@ const WishesAndPrayers: React.FC = () => {
         
         if (data.wishes && Array.isArray(data.wishes)) {
           // Convert timestamp strings back to Date objects
-          const wishesWithDates = data.wishes.map((wish: any) => ({
+          const wishesWithDates = data.wishes.map((wish: { id: string; name: string; attendance: string; message: string; timestamp: string }) => ({
             ...wish,
             timestamp: new Date(wish.timestamp)
           }));
@@ -50,7 +51,7 @@ const WishesAndPrayers: React.FC = () => {
         const savedWishes = localStorage.getItem('wedding-wishes');
         if (savedWishes) {
           const parsedWishes = JSON.parse(savedWishes);
-          const wishesWithDates = parsedWishes.map((wish: any) => ({
+          const wishesWithDates = parsedWishes.map((wish: { id: string; name: string; attendance: string; message: string; timestamp: string }) => ({
             ...wish,
             timestamp: new Date(wish.timestamp)
           }));
@@ -168,10 +169,11 @@ const WishesAndPrayers: React.FC = () => {
     <div className="relative py-8 min-h-[100vh] -mx-4 sm:-mx-6 lg:-mx-8">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/images/Greetingcard.jpg"
           alt="Wishes Background"
-          className="w-full h-full object-cover opacity-70"
+          fill
+          className="object-cover opacity-70"
           style={{
             filter: "brightness(0.6) blur(0.3px)",
             transform: `scale(${1 + scrollY * 0.0002})`,

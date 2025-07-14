@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import MainContent from "./components/MainContent";
 import RightPanel from "./components/RightPanel";
 import OpeningPage from "./components/OpeningPage";
@@ -23,7 +23,13 @@ export default function Home() {
   };
 
   if (!showInvitation) {
-    return <OpeningPage onOpenInvitation={handleOpenInvitation} />;
+    return (
+      <Suspense fallback={<div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex items-center justify-center">
+        <div className="text-white text-xl">Loading...</div>
+      </div>}>
+        <OpeningPage onOpenInvitation={handleOpenInvitation} />
+      </Suspense>
+    );
   }
 
   return (

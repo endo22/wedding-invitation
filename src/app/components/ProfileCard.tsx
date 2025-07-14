@@ -27,7 +27,7 @@ export default function ProfileCard() {  return (
       <div className="relative z-10 text-center p-4">
         <h3 className="text-lg font-bold text-gray-800 mb-3 font-serif drop-shadow-sm">Profil Pengantin Pria</h3>        <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-auto mb-3 shadow-sm"></div>
         {/* Foto Profil dengan Frame Monokrom Elegan */}
-        <ProfilePhoto name="Endo" folderPath="/images/slideshow-pria" />
+        <ProfilePhoto name="Endo" />
         {/* Nama Lengkap */}
         <h4 className="text-lg font-bold text-gray-800 mb-2 drop-shadow-sm">Endo Febranda Silalahi S.Kom</h4>
         <p className="text-sm text-gray-600 mb-3 font-medium">Putra dari</p>

@@ -3,10 +3,9 @@ import Image from "next/image";
 
 interface ProfilePhotoProps {
   name: string;
-  folderPath: string;
 }
 
-export default function ProfilePhoto({ name, folderPath }: ProfilePhotoProps) {
+export default function ProfilePhoto({ name }: ProfilePhotoProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

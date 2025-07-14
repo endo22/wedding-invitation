@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface EventInfo {
   title: string;
@@ -53,10 +54,11 @@ const EventDetails: React.FC = () => {
     <div className="relative py-8 min-h-[100vh] -mx-4 sm:-mx-6 lg:-mx-8">
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/images/Church.jpg"
           alt="Event Details Background"
-          className="w-full h-full object-cover opacity-70"
+          fill
+          className="object-cover opacity-70"
           style={{
             filter: "brightness(0.7) blur(0.3px)",
             transform: `scale(${1 + scrollY * 0.0002})`,
@@ -136,7 +138,7 @@ const EventDetails: React.FC = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-6 sm:p-8 lg:p-10">
               {/* Bible Quote */}
               <blockquote className="text-base sm:text-lg lg:text-xl text-white/90 leading-relaxed font-light italic drop-shadow-md mb-4 sm:mb-6">
-                "Dan di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan. Hendaklah damai sejahtera Kristus memerintah dalam hatimu, karena untuk itulah kamu telah dipanggil menjadi satu tubuh. Dan bersyukurlah."
+                &ldquo;Dan di atas semuanya itu: kenakanlah kasih, sebagai pengikat yang mempersatukan dan menyempurnakan. Hendaklah damai sejahtera Kristus memerintah dalam hatimu, karena untuk itulah kamu telah dipanggil menjadi satu tubuh. Dan bersyukurlah.&rdquo;
               </blockquote>
               
               {/* Bible Reference */}

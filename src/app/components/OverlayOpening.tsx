@@ -38,7 +38,7 @@ export default function OverlayOpening({ visible, onClose }: OverlayOpeningProps
         
         if (data.photos && Array.isArray(data.photos)) {
           // Extract only the src URLs for slideshow
-          const imageUrls = data.photos.map((photo: any) => photo.src);
+          const imageUrls = data.photos.map((photo: { src: string }) => photo.src);
           setPreweddingImages(imageUrls);
         } else {
           // Fallback to hardcoded list if API fails

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import ProfilePhoto from "./ProfilePhoto";
 
 interface ProfileData {
@@ -10,7 +11,6 @@ interface ProfileData {
   parents: string;
   quote: string;
   iconColor: string;
-  folderPath: string;
 }
 
 interface ProfileCardProps {
@@ -25,7 +25,7 @@ function ProfileCard({ profile }: ProfileCardProps) {
         <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-2 sm:mb-3 shadow-sm animate-slide-up-delay-1"></div>
         {/* Foto Profil dengan Frame Monokrom Elegan */}
         <div className="animate-zoom-in-delay-2">
-          <ProfilePhoto name={profile.name} folderPath={profile.folderPath} />
+          <ProfilePhoto name={profile.name} />
         </div>
         {/* Nama Lengkap */}
         <h4 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 drop-shadow-sm animate-slide-up-delay-3">
@@ -65,7 +65,6 @@ export default function ProfileCards() {
     quote:
       "Kasih sejati adalah ketika dua hati bersatu dalam iman dan cinta kasih Tuhan",
     iconColor: "bg-gradient-to-br from-blue-500 to-blue-700",
-    folderPath: "/images/slideshow-pria",
   };
 
   const brideProfile: ProfileData = {
@@ -76,17 +75,17 @@ export default function ProfileCards() {
     quote:
       "Cinta sejati adalah kebahagiaan yang dibagi berdua dalam setiap langkah kehidupan",
     iconColor: "bg-gradient-to-br from-pink-400 to-pink-600",
-    folderPath: "/images/slideshow-wanita",
   };
 
   return (
     <div className="relative py-16 pb-0 min-h-[100vh] -mx-4 sm:-mx-6 lg:-mx-8">
       {/* Background image diluar card - menutupi area lebih luas */}
       <div className="absolute inset-0 -z-10">
-        <img
+        <Image
           src="/images/Section%20Profile.jpg"
           alt="Profile Section Background"
-          className="w-full h-full object-cover opacity-70"
+          fill
+          className="object-cover opacity-70"
           style={{
             filter: "brightness(0.7) blur(0.3px)",
             transform: `scale(${1 + scrollY * 0.0002})`,
