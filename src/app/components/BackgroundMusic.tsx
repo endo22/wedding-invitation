@@ -27,7 +27,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }
             audio.volume = 0.6;
             setCanAutoplay(true);
           }
-        } catch (error) {
+        } catch {
           console.log('Autoplay not supported - mobile device');
           setCanAutoplay(false);
         }
@@ -75,7 +75,7 @@ const BackgroundMusic: React.FC<BackgroundMusicProps> = ({ isPlaying, onToggle }
           // Resume AudioContext for iOS Safari
           if (typeof window !== 'undefined' && 'webkitAudioContext' in window) {
             try {
-              const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+              const AudioContext = window.AudioContext || (window as typeof window.AudioContext).webkitAudioContext;
               if (AudioContext) {
                 const audioContext = new AudioContext();
                 if (audioContext.state === 'suspended') {
