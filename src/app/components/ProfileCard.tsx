@@ -29,7 +29,7 @@ export default function ProfileCard() {  return (
         {/* Foto Profil dengan Frame Monokrom Elegan */}
         <ProfilePhoto name="Endo" />
         {/* Nama Lengkap */}
-        <h4 className="text-lg font-bold text-gray-800 mb-2 drop-shadow-sm">Laki - laki S.Kom</h4>
+        <h4 className="text-lg font-bold text-gray-800 mb-2 drop-shadow-sm">Laki-laki S.Kom</h4>
         <p className="text-sm text-gray-600 mb-3 font-medium">Putra dari</p>
         <p className="text-sm text-gray-700 mb-4">Ayah & Ibu</p>
         <div className="bg-gradient-to-br from-gray-50 to-gray-150 rounded-lg p-3 border shadow-inner mx-2">
