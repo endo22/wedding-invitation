@@ -68,7 +68,7 @@ export default function RightPanel() {
             <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-3 sm:mb-4 opacity-60"></div>
             
             {/* Wedding couple names */}
-            <h3 className="text-base sm:text-lg font-serif font-bold mb-1 sm:mb-2 opacity-90">Endo & Han So Hee</h3>
+            <h3 className="text-base sm:text-lg font-serif font-bold mb-1 sm:mb-2 opacity-90">Laki - laki & Perempuan</h3>
             
             {/* Wedding date */}
             <p className="text-xs sm:text-sm text-gray-300 mb-2 sm:mb-3 font-medium">
