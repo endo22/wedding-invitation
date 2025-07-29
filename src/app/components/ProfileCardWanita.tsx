@@ -26,7 +26,7 @@ export default function ProfileCardWanita() {
           `
         }}></div>
       <div className="relative z-10 text-center p-4">
-        <h3 className="text-lg font-bold text-gray-800 mb-3 font-serif drop-shadow-sm">Profil Pengantin Wanita</h3>
+        <h3 className="text-lg font-bold text-gray-800 mb-3 font-serif drop-shadow-sm">Profil Pengantin Wanita </h3>
         <div className="w-16 h-0.5 bg-gradient-to-r from-transparent via-gray-600 to-transparent mx-auto mb-3 shadow-sm"></div>
         {/* Foto Profil dengan Frame Monokrom Elegan */}
         <ProfilePhoto name="Han So Hee" />
