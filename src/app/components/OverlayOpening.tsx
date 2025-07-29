@@ -186,7 +186,7 @@ export default function OverlayOpening({ visible, onClose }: OverlayOpeningProps
         }}>The Wedding of</div>
         <div style={{
           color: 'white', fontSize: isMobile ? 28 : 36, fontWeight: 700, fontFamily: 'serif', margin: '4px 0 8px 0', textShadow: '0 2px 12px rgba(0,0,0,0.35)', opacity: 0.95, textAlign: 'center'
-        }}>Endo Febranda Silalahi & Han So Hee</div>
+        }}>Laki-laki & Perempuan</div>
         
         {/* Countdown Timer */}
         <div style={{
