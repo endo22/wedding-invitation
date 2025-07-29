@@ -32,7 +32,7 @@ export default function ProfileCardWanita() {
         <ProfilePhoto name="Han So Hee" />
         {/* Nama Lengkap */}
         <h4 className="text-lg font-bold text-gray-800 mb-2 drop-shadow-sm">Perempuan S.Sn</h4>
-        <p className="text-sm text-gray-600 mb-3 font-medium">Putri dari</p>
+        <p className="text-sm text-gray-600 mb-3 font-medium">Putrii dari</p>
         <p className="text-sm text-gray-700 mb-4">Bapak & Ibu </p>
         <div className="bg-gradient-to-br from-gray-50 to-gray-150 rounded-lg p-3 border shadow-inner mx-2">
           <p className="text-xs text-gray-600 font-medium italic">
